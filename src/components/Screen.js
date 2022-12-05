@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Logo from "./Logo";
-import QuestionsCards from "./QuestionsCards";
+import QuestionsCards from "./Card/QuestionsCards";
 import Footer from "./Footer";
 import { flashquestions } from "../data/flashquestions";
 import { useState } from "react";

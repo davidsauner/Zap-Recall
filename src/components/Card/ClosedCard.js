@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import colors from "../data/colors";
-import Icon from "../data/Icon";
+import colors from "../../data/colors";
+import Icon from "../../data/Icon";
 export default function ClosedCard({ id, ChangeToSecondCard, status }) {
   const { VERDE, AMARELO, VERMELHO, CINZA } = colors;
   function ChoseColor() {

@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import colors from "../data/colors";
-import AwButton from "./AwButton";
 
 export default function Footer(props) {
-  const { VERDE, AMARELO, VERMELHO } = colors;
-  const { ChandeAnswer, questions, countanswer } = props;
+  const { questions, countanswer } = props;
   return (
     <FooterContainer>
-      {/* <AwButton ChandeAnswer={ChandeAnswer} /> */}
       {countanswer.length}/{questions.length} Respondidas
     </FooterContainer>
   );

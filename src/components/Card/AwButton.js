@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import colors from "../data/colors";
+import colors from "../../data/colors";
 export default function AwButton({ ChandeAnswer }) {
   const { VERMELHO, AMARELO, VERDE } = colors;
   return (
     <>
-      <ContinerButton>
+      <ContainerButton>
         <ButtonClass color={VERMELHO} onClick={() => ChandeAnswer("error")}>
           Não lembrei
         </ButtonClass>
@@ -14,20 +14,20 @@ export default function AwButton({ ChandeAnswer }) {
         <ButtonClass color={VERDE} onClick={() => ChandeAnswer("zap")}>
           Zap!
         </ButtonClass>
-      </ContinerButton>
+      </ContainerButton>
     </>
   );
 }
-const ContinerButton = styled.div`
+const ContainerButton = styled.div`
   display: flex;
-  width: 80%;
+  margin-top: 5px;
   justify-content: space-between;
-  margin: 20px;
   border-color: white;
 `;
 const ButtonClass = styled.button`
   width: 90px;
-  height: 50px;
+  height: 40px;
+  margin: 5px;
   font-family: "Recursive";
   font-style: normal;
   font-weight: 400;
@@ -40,7 +40,7 @@ const ButtonClass = styled.button`
   color: #ffffff;
   background: ${(p) => p.color};
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid;
   padding: 5px;
   &:hover {
     cursor: pointer;

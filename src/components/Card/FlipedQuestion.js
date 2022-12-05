@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import setavirar from "../assets/img/seta_virar.png";
+import setavirar from "../../assets/img/seta_virar.png";
+// import setavirar from "../assets/img/seta_virar.png";
 import AwButton from "./AwButton";
 export default function FlipedQuestion({ questions, answer, ChandeAnswer }) {
   const [showanswer, setShowAnswer] = useState(false);
