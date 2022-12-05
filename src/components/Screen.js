@@ -4,15 +4,14 @@ import QuestionsCards from "./Card/QuestionsCards";
 import Footer from "./Footer";
 import { flashquestions } from "../data/flashquestions";
 import { useState } from "react";
+import Welcome from "./Welcome/Welcome";
 let question = flashquestions.map((value) => ({ ...value, fliped: false }));
 export default function Screen() {
   const [questions, setQuestions] = useState(question);
   const [questionanswer, setQuestionAnswer] = useState();
   const [answeredarray, setAnsweredarray] = useState([]);
-
+  const [welcomepage, setWelcomepage] = useState(false);
   function ChandeAnswer(status) {
-    console.log("no change");
-    console.log(questionanswer);
     const newarray = [...answeredarray, { id: questionanswer, status: status }];
     setAnsweredarray(newarray);
     ChangeToSecondCard(0);
@@ -38,23 +37,29 @@ export default function Screen() {
 
   return (
     <>
-      <ScreenContainer>
-        <Logo />
-        {questions.map((value, i) => (
-          <QuestionsCards
-            key={i}
-            questions={value}
-            ChangeToSecondCard={ChangeToSecondCard}
-            status={FindStatus(value.id)}
+      {welcomepage ? (
+        <>
+          <ScreenContainer>
+            <Logo />
+            {questions.map((value, i) => (
+              <QuestionsCards
+                key={i}
+                questions={value}
+                ChangeToSecondCard={ChangeToSecondCard}
+                status={FindStatus(value.id)}
+                ChandeAnswer={ChandeAnswer}
+              />
+            ))}
+          </ScreenContainer>
+          <Footer
             ChandeAnswer={ChandeAnswer}
+            questions={questions}
+            countanswer={answeredarray}
           />
-        ))}
-      </ScreenContainer>
-      <Footer
-        ChandeAnswer={ChandeAnswer}
-        questions={questions}
-        countanswer={answeredarray}
-      />
+        </>
+      ) : (
+        <Welcome setWelcomepage={setWelcomepage} />
+      )}
     </>
   );
 }
