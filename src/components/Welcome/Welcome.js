@@ -6,7 +6,10 @@ export default function Welcome({ setWelcomepage }) {
       <Container>
         <img src={logo} alt={logo} />
         <Namestyle>ZapRecall</Namestyle>
-        <Welcomebutton onClick={() => setWelcomepage(true)}>
+        <Welcomebutton
+          onClick={() => setWelcomepage(true)}
+          data-test="start-btn"
+        >
           Iniciar Recall!
         </Welcomebutton>
       </Container>
@@ -20,6 +23,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 0px;
   padding: 0px;
   padding-bottom: 200px;
