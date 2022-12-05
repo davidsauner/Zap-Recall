@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Footer(props) {
   const { questions, countanswer } = props;
   return (
-    <FooterContainer>
+    <FooterContainer data-test="footer">
       {countanswer.length}/{questions.length} Respondidas
     </FooterContainer>
   );

@@ -17,8 +17,16 @@ export default function ClosedCard({ id, ChangeToSecondCard, status }) {
   }
 
   return (
-    <CardContainer id={id} onClick={() => ChangeToSecondCard(id)}>
-      <ColorQuestion color={ChoseColor()} status={status}>
+    <CardContainer
+      id={id}
+      onClick={() => ChangeToSecondCard(id)}
+      data-test="flashcard"
+    >
+      <ColorQuestion
+        color={ChoseColor()}
+        status={status}
+        data-test="flashcard-text"
+      >
         Pergunta {id}
       </ColorQuestion>
       <Icon status={status} />

@@ -5,13 +5,25 @@ export default function AwButton({ ChandeAnswer }) {
   return (
     <>
       <ContainerButton>
-        <ButtonClass color={VERMELHO} onClick={() => ChandeAnswer("error")}>
+        <ButtonClass
+          color={VERMELHO}
+          onClick={() => ChandeAnswer("error")}
+          data-test="no-btn"
+        >
           Não lembrei
         </ButtonClass>
-        <ButtonClass color={AMARELO} onClick={() => ChandeAnswer("half")}>
+        <ButtonClass
+          color={AMARELO}
+          onClick={() => ChandeAnswer("half")}
+          data-test="partial-btn"
+        >
           Quase não lembrei
         </ButtonClass>
-        <ButtonClass color={VERDE} onClick={() => ChandeAnswer("zap")}>
+        <ButtonClass
+          color={VERDE}
+          onClick={() => ChandeAnswer("zap")}
+          data-test="zap-btn"
+        >
           Zap!
         </ButtonClass>
       </ContainerButton>

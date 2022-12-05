@@ -9,16 +9,17 @@ export default function FlipedQuestion({ questions, answer, ChandeAnswer }) {
     <>
       {showanswer ? (
         <FlipedQuestionContainer>
-          <h1>{answer}</h1>
+          <h1 data-test="flashcard-text">{answer}</h1>
           <AwButton ChandeAnswer={ChandeAnswer} />
         </FlipedQuestionContainer>
       ) : (
         <FlipedQuestionContainer>
-          <h1>{questions}</h1>
+          <h1 data-test="flashcard-text">{questions}</h1>
           <img
             onClick={() => setShowAnswer(true)}
             src={setavirar}
             alt={setavirar}
+            data-test="turn-btn"
           />
         </FlipedQuestionContainer>
       )}
