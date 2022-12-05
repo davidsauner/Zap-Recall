@@ -1,11 +1,10 @@
-import { GlobalStyle } from "./GlobalStyles";
-function App() {
+import Screen from "./components/Screen";
+import { GlobalStyle } from "./data/GlobalStyle";
+export default function App() {
   return (
     <>
       <GlobalStyle />
-      aoba box
+      <Screen />
     </>
   );
 }
-
-export default App;
